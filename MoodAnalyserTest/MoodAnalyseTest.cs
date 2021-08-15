@@ -14,22 +14,18 @@ namespace MoodAnalyserTest
         [Test]
         public void GivenSadMessage_WhenAnalysed_ShouldReturnSad()
         {
-            MoodAnalyserClass mood = new MoodAnalyserClass();
-            string message = "I am in Sad Mood";
-            string actual = mood.AnalyseMood(message);
-            //assert
-            Assert.AreEqual("sad", actual);
+            MoodAnalyserClass ma = new MoodAnalyserClass("I am in Sad Mood");
+            string actual = ma.AnalyseMood();
+            Assert.AreEqual(actual, "sad");
         }
 
         //test case 1.2
         [Test]
         public void GivenAnyMessage_WhenAnalysed_ShouldReturnHappy()
         {
-            MoodAnalyserClass mood = new MoodAnalyserClass();
-            string message = "I am in Any Mood";
-            string actual = mood.AnalyseMood(message);
-            //assert
-            Assert.AreEqual("happy", actual);
+            MoodAnalyserClass ma = new MoodAnalyserClass("I am in happy Mood");
+            string actual = ma.AnalyseMood();
+            Assert.AreEqual(actual, "happy");
         }
     }
 }
