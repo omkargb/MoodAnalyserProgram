@@ -10,7 +10,29 @@ namespace MoodAnalyserTest
         {
         }
 
-        //test case 1.1
+        ////test case 1.1
+        //[Test]
+        //public void GivenSadMessage_WhenAnalysed_ShouldReturnSad()
+        //{
+        //    MoodAnalyserClass mood = new MoodAnalyserClass();
+        //    string message = "I am in Sad Mood";
+        //    string actual = mood.AnalyseMood(message);
+        //    //assert
+        //    Assert.AreEqual("sad", actual);
+        //}
+
+        ////test case 1.2
+        //[Test]
+        //public void GivenAnyMessage_WhenAnalysed_ShouldReturnHappy()
+        //{
+        //    MoodAnalyserClass mood = new MoodAnalyserClass();
+        //    string message = "I am in Any Mood";
+        //    string actual = mood.AnalyseMood(message);
+        //    //assert
+        //    Assert.AreEqual("happy", actual);
+        //}
+
+        //Refactor test case 1.1
         [Test]
         public void GivenSadMessage_WhenAnalysed_ShouldReturnSad()
         {
@@ -19,13 +41,25 @@ namespace MoodAnalyserTest
             Assert.AreEqual(actual, "sad");
         }
 
-        //test case 1.2
+        //Refactor test case 1.2
         [Test]
         public void GivenAnyMessage_WhenAnalysed_ShouldReturnHappy()
         {
             MoodAnalyserClass ma = new MoodAnalyserClass("I am in happy Mood");
             string actual = ma.AnalyseMood();
             Assert.AreEqual(actual, "happy");
+        }
+
+        //test case 2.1
+        [Test]
+        public void GivenNullMood_WhenAnalysed_ShouldReturnHappy()
+        {
+            //null value passed
+            MoodAnalyserClass moodAnalyser = new MoodAnalyserClass(null);
+            string actual = moodAnalyser.AnalyseMood();
+
+            //assert
+            Assert.AreEqual("happy", actual);
         }
     }
 }
